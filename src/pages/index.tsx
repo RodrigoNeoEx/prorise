@@ -9,7 +9,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className="flex overflow-hidden bg-slate-100 px-2 text-2xl text-blue-700">Home</main>
+			<main className="flex overflow-hidden bg-blue-100 px-2 text-2xl text-blue-700">Home</main>
 		</>
 	);
 }
