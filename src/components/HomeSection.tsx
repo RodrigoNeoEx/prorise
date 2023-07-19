@@ -15,7 +15,7 @@ export const HomeSection = () => {
 				/>
 
 				<div className="md:mx-30 xl:mx-50 absolute mx-5 space-y-4 sm:mx-14 lg:mx-40">
-					<h2 className="max-w-[300px] text-3xl font-bold text-white md:max-w-sm md:text-4xl 2xl:max-w-[600px] 2xl:text-6xl">
+					<h2 className="max-w-[300px] text-3xl font-bold md:max-w-sm md:text-4xl 2xl:max-w-[600px] 2xl:text-6xl">
 						Novas <span className="text-secondary">ideias</span> para uma nova era{" "}
 						<span className="text-primary">digital</span>
 					</h2>
