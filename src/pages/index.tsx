@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Header } from "components/Header";
 import { WhatsappButton } from "components/WhatsappButton";
 import { HomeSection } from "components/HomeSection";
+import { ServicesSection } from "components/ServicesSection";
 
 export default function Home() {
 	return (
@@ -19,10 +20,14 @@ export default function Home() {
 					rel="stylesheet"
 				/>
 			</Head>
+
 			<Header />
+
 			<WhatsappButton />
 
 			<HomeSection />
+
+			<ServicesSection />
 		</>
 	);
 }

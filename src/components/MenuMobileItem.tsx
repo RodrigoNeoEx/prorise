@@ -25,17 +25,13 @@ export const MenuMobileItem = ({ name, Icon, subMenus }: MenuMobileItemProps) =>
 				onClick={toggleDropdown}
 			>
 				<div className="flex">
-					<Icon size={25} className="text-white" />
-					<span className="ml-2 inline-block text-white">{name}</span>
+					<Icon size={25} />
+					<span className="ml-2 inline-block">{name}</span>
 				</div>
 
 				{hasSubMenu && (
 					<Fragment>
-						{dropdownOpen ? (
-							<MdKeyboardArrowUp size={25} className="text-white" />
-						) : (
-							<MdKeyboardArrowDown size={25} className="text-white" />
-						)}
+						{dropdownOpen ? <MdKeyboardArrowUp size={25} /> : <MdKeyboardArrowDown size={25} />}
 					</Fragment>
 				)}
 			</li>
@@ -43,7 +39,7 @@ export const MenuMobileItem = ({ name, Icon, subMenus }: MenuMobileItemProps) =>
 			{hasSubMenu && dropdownOpen && (
 				<ul>
 					{subMenus.map(({ name }) => (
-						<li key={name} className="px-8 py-2 text-white hover:bg-dark-400">
+						<li key={name} className="px-8 py-2 hover:bg-dark-400">
 							{name}
 						</li>
 					))}
