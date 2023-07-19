@@ -4,7 +4,7 @@ import { MenuDesktop } from "components/MenuDesktop";
 
 export const Header = () => {
 	return (
-		<header className="flex items-center justify-between p-4 shadow-md">
+		<header className="flex h-20 items-center justify-between bg-dark-800 px-4 align-middle shadow-md">
 			<Logo />
 
 			<div className="hidden md:block">

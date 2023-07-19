@@ -20,8 +20,10 @@ module.exports = {
         900: "#000000",
       },
 
-      'custom-gray': {
-        500: "#9E9E9E",
+      custom: {
+        gray: {
+          500: "#9E9E9E",
+        },
       },
     },
     extend: {},

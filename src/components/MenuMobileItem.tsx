@@ -21,20 +21,20 @@ export const MenuMobileItem = ({ name, Icon, subMenus }: MenuMobileItemProps) =>
 		<>
 			<li
 				key={name}
-				className="flex justify-between px-4 py-2 hover:bg-gray-100"
+				className="flex justify-between px-4 py-2 hover:cursor-pointer hover:bg-dark-400"
 				onClick={toggleDropdown}
 			>
 				<div className="flex">
-					<Icon size={25} className="text-orange-400" />
-					<span className="ml-2 inline-block text-gray-500">{name}</span>
+					<Icon size={25} className="text-white" />
+					<span className="ml-2 inline-block text-white">{name}</span>
 				</div>
 
 				{hasSubMenu && (
 					<Fragment>
 						{dropdownOpen ? (
-							<MdKeyboardArrowUp size={25} className="text-orange-400" />
+							<MdKeyboardArrowUp size={25} className="text-white" />
 						) : (
-							<MdKeyboardArrowDown size={25} className="text-orange-400" />
+							<MdKeyboardArrowDown size={25} className="text-white" />
 						)}
 					</Fragment>
 				)}
@@ -43,7 +43,7 @@ export const MenuMobileItem = ({ name, Icon, subMenus }: MenuMobileItemProps) =>
 			{hasSubMenu && dropdownOpen && (
 				<ul>
 					{subMenus.map(({ name }) => (
-						<li key={name} className="px-8 py-2 text-gray-500 hover:bg-gray-100">
+						<li key={name} className="px-8 py-2 text-white hover:bg-dark-400">
 							{name}
 						</li>
 					))}

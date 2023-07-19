@@ -14,11 +14,11 @@ export const MenuMobile = () => {
 
 	return (
 		<div>
-			<MdMenu type="button" size={30} cursor="pointer" onClick={openMenu} />
+			<MdMenu type="button" className="text-white" size={30} cursor="pointer" onClick={openMenu} />
 
 			<Drawer open={menuOpen} onClose={closeMenu}>
 				<div className="p-4">
-					<MdOutlineClose size={30} cursor="pointer" onClick={closeMenu} />
+					<MdOutlineClose size={30} color="white" cursor="pointer" onClick={closeMenu} />
 				</div>
 
 				<ul>

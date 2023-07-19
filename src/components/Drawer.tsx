@@ -12,7 +12,7 @@ export const Drawer = ({ open, onClose, children }: DrawerProps) => {
 			<div
 				className={`fixed top-0 right-0 z-20 h-screen w-72 ${
 					open ? "translate-x-0" : "translate-x-full"
-				} overflow-y-auto bg-white transition-transform`}
+				} overflow-y-auto bg-dark-600 transition-transform`}
 			>
 				{children}
 			</div>

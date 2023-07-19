@@ -7,7 +7,7 @@ import { menuItems } from "const/menuItems";
 export const MenuDesktop = () => {
 	return (
 		<nav>
-			<ul className="flex">
+			<ul className="flex space-x-6">
 				{menuItems.map(({ name, subMenus }) => (
 					<Fragment key={name}>
 						{subMenus ? (
@@ -15,19 +15,19 @@ export const MenuDesktop = () => {
 								<DropdownMenu.Trigger asChild>
 									<li
 										key={name}
-										className="text-md mx-3 flex cursor-pointer uppercase text-orange-500"
+										className="flex cursor-pointer text-base font-bold uppercase text-white"
 									>
 										<span>{name}</span>
-										<MdKeyboardArrowDown size={25} className="ml-2 text-orange-400" />
+										<MdKeyboardArrowDown size={25} className="ml-2 text-white" />
 									</li>
 								</DropdownMenu.Trigger>
 
 								<DropdownMenu.Portal>
-									<DropdownMenu.Content className="mt-2 min-w-[200px] rounded-md bg-white py-2 shadow-md">
+									<DropdownMenu.Content className="mt-2 min-w-[200px] rounded-md bg-dark-600 py-2 text-white shadow-md">
 										{subMenus.map(({ name }) => (
 											<DropdownMenu.Item
 												key={name}
-												className="cursor-pointer border-none py-1 px-4 text-orange-500 hover:bg-orange-500 hover:text-white"
+												className="hover:dark-400 cursor-pointer border-none py-1 px-4"
 											>
 												{name}
 											</DropdownMenu.Item>
@@ -38,7 +38,7 @@ export const MenuDesktop = () => {
 								</DropdownMenu.Portal>
 							</DropdownMenu.Root>
 						) : (
-							<li className="text-md mx-3 flex cursor-pointer uppercase text-orange-500">
+							<li className="text-md flex cursor-pointer font-bold uppercase text-white">
 								<span>{name}</span>
 							</li>
 						)}
