@@ -6,6 +6,23 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
+
+      primary: {
+        blue: "#08B3E6",
+        orange: "#FE5649",
+      },
+
+      dark: {
+        400: "#767676",
+        600: "#222228",
+        700: "#18181C",
+        800: "#12171A",
+        900: "#000000",
+      },
+
+      'custom-gray': {
+        500: "#9E9E9E",
+      },
     },
     extend: {},
   },
