@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.4.10",
     "@radix-ui/react-dropdown-menu": "^2.0.4",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
@@ -32,6 +31,6 @@
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.4",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.3.3"
   }
 }
