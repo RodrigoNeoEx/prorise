@@ -13,17 +13,14 @@ export const MenuDesktop = () => {
 						{subMenus ? (
 							<DropdownMenu.Root>
 								<DropdownMenu.Trigger asChild>
-									<li
-										key={name}
-										className="flex cursor-pointer text-base font-bold uppercase text-white"
-									>
+									<li key={name} className="flex cursor-pointer text-base font-bold uppercase">
 										<span>{name}</span>
-										<MdKeyboardArrowDown size={25} className="ml-2 text-white" />
+										<MdKeyboardArrowDown size={25} className="ml-2" />
 									</li>
 								</DropdownMenu.Trigger>
 
 								<DropdownMenu.Portal>
-									<DropdownMenu.Content className="mt-2 min-w-[200px] rounded-md bg-dark-600 py-2 text-white shadow-md">
+									<DropdownMenu.Content className="mt-2 min-w-[200px] rounded-md bg-dark-600 py-2 shadow-md">
 										{subMenus.map(({ name }) => (
 											<DropdownMenu.Item
 												key={name}
@@ -38,7 +35,7 @@ export const MenuDesktop = () => {
 								</DropdownMenu.Portal>
 							</DropdownMenu.Root>
 						) : (
-							<li className="text-md flex cursor-pointer font-bold uppercase text-white">
+							<li className="text-md flex cursor-pointer font-bold uppercase">
 								<span>{name}</span>
 							</li>
 						)}
