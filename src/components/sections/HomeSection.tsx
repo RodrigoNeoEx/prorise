@@ -1,4 +1,4 @@
-import { ContentContainer } from "./ContentContainer";
+import { ContentContainer } from "@/components/ContentContainer";
 
 export const HomeSection = () => {
 	return (

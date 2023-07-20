@@ -1,10 +1,11 @@
 import Head from "next/head";
 
-import { Header } from "components/Header";
-import { WhatsappButton } from "components/WhatsappButton";
-import { HomeSection } from "components/HomeSection";
-import { ServicesSection } from "components/ServicesSection";
-import { ProjectsSection } from "components/ProjectsSection";
+import { Header } from "@/components/Header";
+import { WhatsappButton } from "@/components/WhatsappButton";
+import { HomeSection } from "@/components/sections/HomeSection";
+import { SpaceSection } from "@/components/sections/SpaceSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
 
 export default function Home() {
 	return (
@@ -16,13 +17,6 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 				<link rel="icon" href="/favicon.ico" />
-
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-				<link
-					href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap"
-					rel="stylesheet"
-				/>
 
 				<link
 					rel="stylesheet"
@@ -37,14 +31,12 @@ export default function Home() {
 			</Head>
 
 			<Header />
+			<HomeSection />
+			<ServicesSection />
+			<SpaceSection />
+			<ProjectsSection />
 
 			<WhatsappButton />
-
-			<HomeSection />
-
-			<ServicesSection />
-
-			<ProjectsSection />
 		</>
 	);
 }

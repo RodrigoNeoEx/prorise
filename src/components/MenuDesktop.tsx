@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-import { menuItems } from "const/menuItems";
+import { menuItems } from "@/constants/menuItems";
 
 export const MenuDesktop = () => {
 	return (
@@ -24,7 +24,7 @@ export const MenuDesktop = () => {
 										{subMenus.map(({ name }) => (
 											<DropdownMenu.Item
 												key={name}
-												className="hover:dark-400 cursor-pointer border-none py-1 px-4"
+												className="hover:dark-400 cursor-pointer border-none px-4 py-1"
 											>
 												{name}
 											</DropdownMenu.Item>

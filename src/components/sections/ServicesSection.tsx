@@ -1,5 +1,5 @@
-import { ContentContainer } from "./ContentContainer";
-import { SectionHeader } from "./SectionHeader";
+import { ContentContainer } from "@/components/ContentContainer";
+import { SectionHeader } from "@/components/SectionHeader";
 
 import { GrGroup, GrUserManager, GrCode } from "react-icons/gr";
 
@@ -56,7 +56,7 @@ export const ServicesSection = () => {
 						return (
 							<div
 								key={title}
-								className="col flex flex-col items-center gap-6 rounded-2xl border-2 border border-dark-500 px-10 py-14"
+								className="col flex flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 px-10 py-14"
 							>
 								<div className="flex h-20 w-20 items-center justify-center rounded-[30px] bg-primary">
 									{icon}

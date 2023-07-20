@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import ProriseLogo from "../assets/images/logo-priorise.svg";
+import ProriseLogo from "@/assets/images/logo-priorise.svg";
 
 export const Logo = () => {
 	return (

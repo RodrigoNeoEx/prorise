@@ -1,6 +1,6 @@
-import { Logo } from "components/Logo";
-import { MenuMobile } from "components/MenuMobile";
-import { MenuDesktop } from "components/MenuDesktop";
+import { Logo } from "@/components/Logo";
+import { MenuMobile } from "@/components/MenuMobile";
+import { MenuDesktop } from "@/components/MenuDesktop";
 import { ContentContainer } from "./ContentContainer";
 
 export const Header = () => {
