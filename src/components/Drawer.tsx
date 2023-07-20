@@ -20,7 +20,7 @@ export const Drawer = ({ open, onClose, children }: DrawerProps) => {
 			<div
 				className={`${
 					open ? "block" : "hidden"
-				} bg-black absolute bottom-0 left-0 right-0 top-0 h-screen w-screen opacity-50`}
+				} absolute bottom-0 left-0 right-0 top-0 h-screen w-screen bg-black opacity-50`}
 				onClick={onClose}
 			/>
 		</>
