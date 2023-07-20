@@ -1,16 +1,25 @@
 import { ContentContainer } from "@/components/ContentContainer";
 import { SectionHeader } from "@/components/SectionHeader";
 
-import { GrGroup, GrUserManager, GrCode } from "react-icons/gr";
+import { GrUserManager, GrCode } from "react-icons/gr";
+
+import { motion, useAnimationControls, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export const ServicesSection = () => {
+	const servicesContainerRef = useRef(null);
+	const servicesContainerIsInView = useInView(servicesContainerRef, {
+		margin: "0px 0px -200px 0px",
+	});
+	const controls = useAnimationControls();
+
+	useEffect(() => {
+		if (servicesContainerIsInView) {
+			controls.start("visible");
+		}
+	}, [servicesContainerIsInView]);
+
 	const services = [
-		{
-			icon: <GrGroup size={40} color="white" />,
-			title: "Bodyshop",
-			description:
-				"Nossa bodyshop de TI oferece talentos especializados para atender às suas necessidades de desenvolvimento, manutenção e suporte de software. Contamos com uma equipe qualificada para agregar valor e eficiência ao seu projeto.",
-		},
 		{
 			icon: <GrCode size={40} color="white" />,
 			title: "Outsourcing",
@@ -43,6 +52,26 @@ export const ServicesSection = () => {
 		},
 	];
 
+	const containerAnimation = {
+		hidden: { opacity: 1, scale: 0 },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				delayChildren: 0.3,
+				staggerChildren: 0.2,
+			},
+		},
+	};
+
+	const itemAnimation = {
+		hidden: { y: 20, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+		},
+	};
+
 	return (
 		<section>
 			<ContentContainer className="my-16">
@@ -50,25 +79,33 @@ export const ServicesSection = () => {
 					title="Serviços Oferecidos"
 					description="Nosso time oferece as mais recentes e inovadoras soluções para impulsionar sua empresa com eficiência e segurança tecnológica."
 				/>
+				<motion.div ref={servicesContainerRef}>
+					<motion.div
+						className="mt-10 grid w-fit gap-10 text-center md:grid-cols-2 md:gap-20 xl:grid-cols-3 xl:gap-10 2xl:gap-[8rem]"
+						variants={containerAnimation}
+						initial="hidden"
+						animate={controls}
+					>
+						{services.map(({ icon, title, description }) => {
+							return (
+								<motion.div
+									key={title}
+									className="col flex flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 px-10 py-14"
+									variants={itemAnimation}
+									whileHover={{ scale: 1.03 }}
+								>
+									<div className="flex h-20 w-20 items-center justify-center rounded-[30px] bg-primary">
+										{icon}
+									</div>
 
-				<div className="mt-10 grid w-fit gap-10 text-center md:grid-cols-2 md:gap-20 xl:grid-cols-3 xl:gap-10 2xl:gap-[8rem]">
-					{services.map(({ icon, title, description }) => {
-						return (
-							<div
-								key={title}
-								className="col flex flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 px-10 py-14"
-							>
-								<div className="flex h-20 w-20 items-center justify-center rounded-[30px] bg-primary">
-									{icon}
-								</div>
+									<h4 className="text-xl font-bold">{title}</h4>
 
-								<h4 className="text-xl font-bold">{title}</h4>
-
-								<p className="text-custom-gray-500">{description}</p>
-							</div>
-						);
-					})}
-				</div>
+									<p className="text-custom-gray-500">{description}</p>
+								</motion.div>
+							);
+						})}
+					</motion.div>
+				</motion.div>
 			</ContentContainer>
 		</section>
 	);
