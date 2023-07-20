@@ -10,7 +10,7 @@ export const WhatsappButton = () => {
 			href={`https://api.whatsapp.com/send/?phone=55${phoneNumber}&text=${text}`}
 			target="_blank"
 		>
-			<div className="absolute bottom-3 right-3 w-fit cursor-pointer rounded-full bg-green-500 p-2">
+			<div className="fixed bottom-3 right-3 w-fit cursor-pointer rounded-full bg-green-500 p-2">
 				<MdWhatsapp size={40} color="#FFF" />
 			</div>
 		</Link>
