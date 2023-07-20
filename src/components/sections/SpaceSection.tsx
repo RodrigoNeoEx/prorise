@@ -16,9 +16,7 @@ export const SpaceSection = () => {
 							A good design is not only aesthetically pleasing, but also functional. It should be
 							able to solve the problem{" "}
 						</p>
-						<button className="rounded-sm bg-primary px-4 py-2 text-lg font-bold text-white">
-							Saiba mais
-						</button>
+						<button className="">Saiba mais</button>
 					</div>
 				</section>
 			</div>
