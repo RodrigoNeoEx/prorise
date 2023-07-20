@@ -1,5 +1,5 @@
 import Image from "next/image";
-import EcoImg from "../../public/eco.png";
+import EcoImg from "@/public/eco.png";
 
 export const SpaceSection = () => {
 	return (

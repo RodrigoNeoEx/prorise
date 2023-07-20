@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-import { Header } from "components/Header";
-import { WhatsappButton } from "components/WhatsappButton";
-import { HomeSection } from "components/HomeSection";
-import { SpaceSection } from "components/SpaceSection";
-import { ServicesSection } from "components/ServicesSection";
+import { Header } from "@/components/Header";
+import { WhatsappButton } from "@/components/WhatsappButton";
+import { HomeSection } from "@/components/sections/HomeSection";
+import { SpaceSection } from "@/components/sections/SpaceSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export default function Home() {
 	return (

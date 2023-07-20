@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { MdMenu, MdOutlineClose } from "react-icons/md";
 
-import { Drawer } from "components/Drawer";
-import { MenuMobileItem } from "components/MenuMobileItem";
+import { Drawer } from "@/components/Drawer";
+import { MenuMobileItem } from "@/components/MenuMobileItem";
 
-import { menuItems } from "const/menuItems";
+import { menuItems } from "@/constants/menuItems";
 
 export const MenuMobile = () => {
 	const [menuOpen, setMenuOpen] = useState(false);

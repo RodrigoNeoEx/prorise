@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-import { menuItems } from "const/menuItems";
+import { menuItems } from "@/constants/menuItems";
 
 export const MenuDesktop = () => {
 	return (

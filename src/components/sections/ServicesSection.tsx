@@ -1,5 +1,5 @@
-import { ContentContainer } from "./ContentContainer";
-import { SectionHeader } from "./SectionHeader";
+import { ContentContainer } from "@/components/ContentContainer";
+import { SectionHeader } from "@/components/SectionHeader";
 
 import { GrGroup, GrUserManager, GrCode } from "react-icons/gr";
 
