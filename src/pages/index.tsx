@@ -5,6 +5,7 @@ import { WhatsappButton } from "@/components/WhatsappButton";
 import { HomeSection } from "@/components/sections/HomeSection";
 import { SpaceSection } from "@/components/sections/SpaceSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
 	return (
@@ -20,6 +21,7 @@ export default function Home() {
 			<HomeSection />
 			<ServicesSection />
 			<SpaceSection />
+			<Footer />
 
 			<WhatsappButton />
 		</>
