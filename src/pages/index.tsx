@@ -5,6 +5,7 @@ import { WhatsappButton } from "@/components/WhatsappButton";
 import { HomeSection } from "@/components/sections/HomeSection";
 import { SpaceSection } from "@/components/sections/SpaceSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { NetworkSection } from "@/components/sections/NetworkSection";
 import { Footer } from "@/components/Footer";
 import { CopyrightSection } from "@/components/sections/CopyrightSection";
 
@@ -22,6 +23,7 @@ export default function Home() {
 			<HomeSection />
 			<ServicesSection />
 			<SpaceSection />
+			<NetworkSection />
 			<Footer />
 			<CopyrightSection />
 
