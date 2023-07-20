@@ -27,7 +27,7 @@ export const MenuDesktop = () => {
 										{subMenus.map(({ name }) => (
 											<DropdownMenu.Item
 												key={name}
-												className="hover:dark-400 cursor-pointer border-none py-1 px-4"
+												className="hover:dark-400 cursor-pointer border-none px-4 py-1"
 											>
 												{name}
 											</DropdownMenu.Item>
