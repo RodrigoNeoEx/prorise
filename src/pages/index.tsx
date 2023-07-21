@@ -9,6 +9,7 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { NetworkSection } from "@/components/sections/NetworkSection";
 import { Footer } from "@/components/Footer";
 import { CopyrightSection } from "@/components/sections/CopyrightSection";
+import { CollaboratorsSection } from "@/components/sections/CollaboratorsSection";
 
 export default function Home() {
 	return (
@@ -36,6 +37,7 @@ export default function Home() {
 			<Header />
 			<HomeSection />
 			<ServicesSection />
+			<CollaboratorsSection />
 			<SpaceSection />
 			<ProjectsSection />
 			<NetworkSection />
