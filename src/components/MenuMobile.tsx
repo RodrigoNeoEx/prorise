@@ -22,8 +22,14 @@ export const MenuMobile = () => {
 				</div>
 
 				<ul>
-					{menuItems.map(({ name, Icon, subMenus }) => (
-						<MenuMobileItem key={name} name={name} Icon={Icon} subMenus={subMenus} />
+					{menuItems.map(({ name, Icon, sectionId, subMenus }) => (
+						<MenuMobileItem
+							key={name}
+							name={name}
+							Icon={Icon}
+							sectionId={sectionId}
+							subMenus={subMenus}
+						/>
 					))}
 				</ul>
 			</Drawer>

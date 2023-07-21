@@ -85,7 +85,7 @@ export const NetworkSection = () => {
 	}
 
 	return (
-		<section className="flex h-screen items-center">
+		<section id="network" className="flex h-screen items-center">
 			<ContentContainer className="h-full">
 				<section className="grid h-full grid-cols-[repeat(auto-fill,minmax(600px,1fr))] items-center gap-32">
 					<div className="h-[600px]">
