@@ -1,5 +1,6 @@
 import Image from "next/image";
-import EcoImg from "@/public/eco.png";
+import EcoLayer from "@/public/eco-layer.svg";
+import TechLayer from "@/public/tech-layer.svg";
 import { motion, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 
@@ -24,11 +25,22 @@ export const SpaceSection = () => {
 			<div className="mx-auto w-[90vw]">
 				<section className="flex flex-wrap-reverse items-center justify-evenly gap-14">
 					<motion.div
-						className="aspect-square w-72 md:w-1/3"
+						className="relative aspect-square w-72 md:w-1/3"
 						ref={servicesContainerRef}
 						initial={{ scale: 0 }}
 					>
-						<Image alt="Ecosistema" src={EcoImg} />
+						<motion.div
+							className="absolute z-10"
+							transition={{
+								duration: 60,
+								repeat: Infinity,
+								ease: "linear",
+							}}
+							animate={{ rotate: 360 }}
+						>
+							<Image alt="Ecosistema" src={TechLayer} draggable={false} />
+						</motion.div>
+						<Image alt="Ecosistema" src={EcoLayer} className="absolute" draggable={false} />
 					</motion.div>
 
 					<div className="w-96 space-y-6">

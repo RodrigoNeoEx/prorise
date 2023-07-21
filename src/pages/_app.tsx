@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<main className={inter.className}>
 			<Component {...pageProps} />
-			<ToastContainer theme="dark" position="bottom-right" />
+			<ToastContainer theme="dark" />
 		</main>
 	);
 }
