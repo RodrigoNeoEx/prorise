@@ -30,6 +30,7 @@ export const HomeSection = () => {
 					</motion.span>
 				</div>
 			</ContentContainer>
+			<div className=" relative bottom-20 h-20 bg-gradient-to-t from-dark-900 "></div>
 		</section>
 	);
 };
