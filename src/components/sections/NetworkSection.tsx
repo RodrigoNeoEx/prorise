@@ -11,13 +11,25 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { Field } from "../Field";
+import { phoneMask } from "@/helpers/phoneMask";
+import { Label } from "../ui/label";
 
 const formContactSchema = z.object({
 	email: z.string().email({ message: "E-mail inválido" }),
 	name: z.string().min(3, { message: "Nome deve ter no mínimo 3 caracteres" }),
 	message: z.string().min(10, { message: "Mensagem deve ter no mínimo 10 caracteres" }),
-	cel: z.string().min(10, { message: "Celular deve ter no mínimo 8 caracteres" }),
-	file: z.custom<FileList>(),
+	cel: z.string().min(10, { message: "Telefone deve ter no mínimo 8 caracteres" }),
+	file: z
+		.custom<FileList>()
+		.optional()
+		.refine(
+			files => "application/pdf" === files?.[0]?.type || files?.length === 0,
+			"Apenas arquivos PDF são aceitos"
+		),
+
+	personType: z.enum(["pf", "pj"]),
+
 	attachment: z.string().optional(),
 });
 
@@ -29,8 +41,12 @@ export const NetworkSection = () => {
 		handleSubmit,
 		formState: { errors },
 		reset,
+		watch,
 	} = useForm<FormContact>({
 		resolver: zodResolver(formContactSchema),
+		defaultValues: {
+			personType: "pj",
+		},
 	});
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -43,6 +59,7 @@ export const NetworkSection = () => {
 			name: data.name,
 			message: data.message,
 			cel: data.cel,
+			personType: data.personType,
 		} as FormContact;
 
 		const file = data?.file?.[0];
@@ -67,6 +84,8 @@ export const NetworkSection = () => {
 		setIsLoading(false);
 	}
 
+	const watchpersonType = watch("personType", "pj");
+
 	async function handleAttachment(file: File) {
 		const reader = new FileReader();
 
@@ -85,57 +104,88 @@ export const NetworkSection = () => {
 	}
 
 	return (
-		<section id="network" className="flex h-screen items-center">
+		<section id="network" className="mb-20 flex h-screen items-center sm:min-h-screen">
 			<ContentContainer className="h-full">
-				<section className="grid h-full grid-cols-[repeat(auto-fill,minmax(600px,1fr))] items-center gap-32">
-					<div className="h-[600px]">
-						<Image alt="Network" src={NetworkImg} className="h-full w-full" />
+				<section className="grid h-full grid-cols-none items-center gap-32 sm:grid-cols-1 lg:grid-cols-2">
+					<div className="order-2 hidden h-[500px] sm:block lg:order-1">
+						<Image
+							alt="Network"
+							src={NetworkImg}
+							draggable="false"
+							className="h-full w-full animate-pulse"
+						/>
 					</div>
 
-					<div className="h-[600px] w-[600px] space-y-6">
-						<h3 className="text-5xl font-semibold">Entre em contato</h3>
-						<p className="text-xl text-custom-gray-500">
-							A good design is not only aesthetically pleasing, but also functional. It should be
-							able to solve the problem{" "}
+					<div className="order-1 mx-auto min-w-[300px] max-w-[600px]  space-y-6 lg:order-2 lg:h-[500px]">
+						<h3 className="text-3xl font-semibold sm:text-5xl">Entre em contato</h3>
+						<p className="text-base text-dark-400 sm:text-xl">
+							Compartilhe suas necessidades, ideias e desafios conosco através deste formulário de
+							contato.
 						</p>
 
 						<form onSubmit={handleSubmit(handleSendEmail)} className="space-y-4">
-							<div className="grid grid-cols-2 gap-4">
-								<div>
+							<div className="flex gap-2">
+								<div className="flex items-center space-x-2">
+									<Label className="flex gap-2">
+										<input
+											type="radio"
+											value="pj"
+											{...register("personType")}
+											className="h-4 w-4 border-dark-400 bg-transparent text-primary outline-none ring-0 focus:ring-black"
+										/>
+										Pessoa Jurídica
+									</Label>
+								</div>
+								<div className="flex items-center space-x-2">
+									<Label className="flex gap-2">
+										<input
+											type="radio"
+											value="pf"
+											{...register("personType")}
+											className="h-4 w-4 border-dark-400 bg-transparent text-primary outline-none ring-0 focus:ring-black"
+										/>
+										Pessoa Física
+									</Label>
+								</div>
+							</div>
+
+							<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+								<Field error={errors.email}>
 									<Input placeholder="E-mail*" {...register("email")} />
-									{errors.email && (
-										<p className="mt-1 text-xs text-secondary">{errors.email.message}</p>
-									)}
-								</div>
+								</Field>
 
-								<div>
-									<Input placeholder="Telefone*" {...register("cel")} />
-									{errors.cel && (
-										<p className="mt-1 text-xs text-secondary">{errors.cel.message}</p>
-									)}
-								</div>
+								<Field error={errors.cel}>
+									<Input
+										placeholder="Telefone*"
+										{...register("cel")}
+										onChange={({ target }) => {
+											target.value = phoneMask(target.value);
+										}}
+									/>
+								</Field>
 							</div>
 
-							<div>
-								<Input placeholder="Nome Completo*" {...register("name")} />
-								{errors.name && (
-									<p className="mt-1 text-xs text-secondary">{errors.name.message}</p>
-								)}
-							</div>
+							<Field error={errors.name}>
+								<Input
+									placeholder={watchpersonType === "pf" ? "Nome Completo*" : "Nome da Empresa*"}
+									{...register("name")}
+								/>
+							</Field>
 
-							<div>
+							<Field error={errors.message}>
 								<Textarea placeholder="Mensagem*" {...register("message")} />
-								{errors.message && (
-									<p className="mt-1 text-xs text-secondary">{errors.message.message}</p>
-								)}
-							</div>
+							</Field>
 
-							<div>
-								<Input placeholder="Anexar PDF" type="file" {...register("file")} />
-								{errors.file && (
-									<p className="mt-1 text-xs text-secondary">{errors.file.message}</p>
-								)}
-							</div>
+							{watchpersonType === "pf" && (
+								<Field error={errors.file}>
+									<Input
+										placeholder="Anexar PDF"
+										type="file"
+										{...register("file")}
+										accept="application/pdf"
+									/>
+								</Field>
+							)}
 
 							<div className="flex w-full justify-end">
 								<Button type="submit" variant="default" loading={isLoading} className="ml-auto">

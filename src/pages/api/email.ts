@@ -9,6 +9,7 @@ const formContactSchema = z.object({
 	message: z.string().min(10),
 	cel: z.string().min(8),
 	attachment: z.string().optional(),
+	personType: z.enum(["pf", "pj"]),
 });
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -16,7 +17,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 		return res.status(405).json({ message: "Method not allowed" });
 	}
 
-	const { name, cel, email, message, attachment } = formContactSchema.parse(req.body);
+	const { name, cel, email, message, attachment, personType } = formContactSchema.parse(req.body);
 
 	const { host, port, user, pass } = {
 		host: process.env.EMAIL_HOST,
@@ -38,8 +39,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	const mailOptions = {
 		from: user,
 		to: user,
-		subject: `Novo contato de ${name} - ${email}`,
-		html: templateMail({ name, message, email, cel }),
+		subject: `Novo Contato ${personType === "pf" ? `de` : `da Empresa`} ${name} - ${email}`,
+		html: templateMail({ name, message, email, cel, personType }),
 		...(attachment && {
 			attachments: [
 				{
