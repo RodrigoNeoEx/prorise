@@ -73,8 +73,8 @@ export const ServicesSection = () => {
 	};
 
 	return (
-		<section>
-			<ContentContainer className="my-16">
+		<section id="services">
+			<ContentContainer className="py-16">
 				<SectionHeader
 					title="Serviços Oferecidos"
 					description="Nosso time oferece as mais recentes e inovadoras soluções para impulsionar sua empresa com eficiência e segurança tecnológica."

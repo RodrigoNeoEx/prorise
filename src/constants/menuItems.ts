@@ -1,9 +1,9 @@
-import { MdHome, MdBuild, MdWork, MdAssuredWorkload, MdFactCheck } from "react-icons/md";
+import { MdBuild, MdWork, MdAssuredWorkload, MdFactCheck } from "react-icons/md";
 
 export const menuItems = [
-	{ name: "Home", Icon: MdHome },
-	{ name: "Serviços", Icon: MdBuild, subMenus: [{ name: "Sub menu 1" }, { name: "Sub menu 2" }] },
-	{ name: "Carreira", Icon: MdWork },
-	{ name: "institucional", Icon: MdAssuredWorkload },
-	{ name: "Cases", Icon: MdFactCheck, subMenus: [{ name: "Sub menu 1" }, { name: "Sub menu 2" }] },
+	{ name: "Serviços", Icon: MdBuild, sectionId: "services" },
+	{ name: "Colaboradores", Icon: MdWork, sectionId: "" },
+	{ name: "Tecnologias", Icon: MdAssuredWorkload, sectionId: "space" },
+	{ name: "Projetos", Icon: MdFactCheck, sectionId: "projects" },
+	{ name: "Contato", Icon: MdFactCheck, sectionId: "network" },
 ];

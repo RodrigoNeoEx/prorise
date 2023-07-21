@@ -66,23 +66,25 @@ export const ProjectsSection = () => {
 	};
 
 	return (
-		<section className="my-16 bg-dark-700 py-12">
-			<ContentContainer>
-				<SectionHeader
-					title="Nossos Projetos"
-					description="A good design is not only aesthetically pleasing, but also functional. It should be able to solve the problem."
-				/>
+		<section id="projects" className="py-16">
+			<div className="bg-dark-700 py-12">
+				<ContentContainer>
+					<SectionHeader
+						title="Nossos Projetos"
+						description="A good design is not only aesthetically pleasing, but also functional. It should be able to solve the problem."
+					/>
 
-				<div className="mt-10 flex justify-center">
-					<div className="w-[1000px] max-w-[90%]">
-						<Slider dots infinite slidesToShow={1} autoplay autoplaySpeed={5000}>
-							{projects.map(project => (
-								<Card key={project.title} {...project} />
-							))}
-						</Slider>
+					<div className="mb-10 mt-20 flex justify-center">
+						<div className="w-[1000px] max-w-[90%]">
+							<Slider dots infinite slidesToShow={1} autoplay autoplaySpeed={5000}>
+								{projects.map(project => (
+									<Card key={project.title} {...project} />
+								))}
+							</Slider>
+						</div>
 					</div>
-				</div>
-			</ContentContainer>
+				</ContentContainer>
+			</div>
 		</section>
 	);
 };
