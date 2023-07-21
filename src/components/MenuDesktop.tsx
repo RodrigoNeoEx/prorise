@@ -3,12 +3,13 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 import { menuItems } from "@/constants/menuItems";
+import { scrollToSection } from "@/helpers/scroll";
 
 export const MenuDesktop = () => {
 	return (
 		<nav>
 			<ul className="flex space-x-6">
-				{menuItems.map(({ name, subMenus }) => (
+				{menuItems.map(({ name, sectionId, subMenus }) => (
 					<Fragment key={name}>
 						{subMenus ? (
 							<DropdownMenu.Root>
@@ -35,7 +36,10 @@ export const MenuDesktop = () => {
 								</DropdownMenu.Portal>
 							</DropdownMenu.Root>
 						) : (
-							<li className="text-md flex cursor-pointer font-bold uppercase">
+							<li
+								className="text-md flex cursor-pointer font-bold uppercase"
+								onClick={e => scrollToSection(e, sectionId)}
+							>
 								<span>{name}</span>
 							</li>
 						)}

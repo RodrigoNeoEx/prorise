@@ -104,7 +104,7 @@ export const NetworkSection = () => {
 	}
 
 	return (
-		<section className="mb-20 flex h-screen items-center sm:min-h-screen">
+		<section id="network" className="mb-20 flex h-screen items-center sm:min-h-screen">
 			<ContentContainer className="h-full">
 				<section className="grid h-full grid-cols-none items-center gap-32 sm:grid-cols-1 lg:grid-cols-2">
 					<div className="order-2 hidden h-[500px] sm:block lg:order-1">

@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 export const HomeSection = () => {
 	return (
-		<section className="h-[calc(100vh-80px)] max-h-[calc(100vh-80px)] min-h-[400px] bg-fundo bg-cover">
+		<section
+			id="home"
+			className="h-[calc(100vh-80px)] max-h-[calc(100vh-80px)] min-h-[400px] bg-fundo bg-cover"
+		>
 			<ContentContainer>
 				<div className="flex h-[calc(100vh-80px)] flex-col justify-center space-y-4">
 					<motion.h2
@@ -27,6 +30,7 @@ export const HomeSection = () => {
 					</motion.span>
 				</div>
 			</ContentContainer>
+			<div className=" relative bottom-20 h-20 bg-gradient-to-t from-dark-900 "></div>
 		</section>
 	);
 };

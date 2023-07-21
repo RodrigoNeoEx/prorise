@@ -21,7 +21,7 @@ export const SpaceSection = () => {
 	}, [servicesContainerIsInView]);
 
 	return (
-		<section className="flex items-center py-20 md:py-36">
+		<section id="space" className="flex items-center py-20 md:py-36">
 			<div className="mx-auto w-[90vw]">
 				<section className="flex flex-wrap-reverse items-center justify-evenly gap-14">
 					<motion.div
