@@ -5,7 +5,8 @@ export const templateMail = ({
 	message,
 	email,
 	cel,
-}: Pick<FormContact, "cel" | "email" | "message" | "name">) => {
+	personType,
+}: Pick<FormContact, "cel" | "email" | "message" | "name" | "personType">) => {
 	return `
     <p style="color: #08B3E6;">
       <strong>E-mail recebido de ${name}</strong>
@@ -16,7 +17,7 @@ export const templateMail = ({
       <strong style="color: #08B3E6;">Dados do Remetente</strong>
     </p>
     <li>
-      <strong>Nome:</strong> ${name}
+      <strong>${personType === "pf" ? "Nome" : "Nome da Empresa"}:</strong> ${name}
     </li>
     <li>
       <strong>E-mail:</strong> ${email}
