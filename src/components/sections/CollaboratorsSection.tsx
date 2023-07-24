@@ -95,7 +95,14 @@ export const CollaboratorsSection = () => {
 						</Slider>
 					</div>
 
-					<div className="flex flex-col items-center">
+					<div className="relative flex flex-col items-center">
+						<div
+							className="absolute mt-20 h-[100px] w-[70vw] max-w-[290px] animate-pulse rounded-3xl sm:max-w-[370px] md:max-w-[900px]"
+							style={{
+								boxShadow: "0 0 1000px 10px rgb(72, 171, 224, 0.5)",
+							}}
+						/>
+
 						<div className="absolute mt-20 flex h-[370px] w-[70vw] max-w-[290px] flex-wrap items-center justify-between gap-8 rounded-3xl bg-gradient-to-r from-[#1393BA] to-primary py-5 sm:max-w-[370px] md:h-[250px] md:max-w-[900px] md:flex-nowrap md:gap-0 lg:h-[300px]">
 							<div className="mx-3 flex flex-col items-start justify-center">
 								<p className="text-sm text-custom-gray-200 sm:text-base">
