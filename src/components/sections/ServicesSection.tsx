@@ -74,14 +74,14 @@ export const ServicesSection = () => {
 
 	return (
 		<section id="services">
-			<ContentContainer className="py-16">
+			<ContentContainer className="my-16">
 				<SectionHeader
 					title="Serviços Oferecidos"
 					description="Nosso time oferece as mais recentes e inovadoras soluções para impulsionar sua empresa com eficiência e segurança tecnológica."
 				/>
 				<motion.div ref={servicesContainerRef}>
 					<motion.div
-						className="mt-10 grid w-fit gap-10 text-center md:grid-cols-2 md:gap-20 xl:grid-cols-3 xl:gap-10 2xl:gap-[8rem]"
+						className="mt-10 grid w-fit gap-10 text-center md:grid-cols-2 md:gap-20 xl:grid-cols-3 xl:gap-10"
 						variants={containerAnimation}
 						initial="hidden"
 						animate={controls}
@@ -94,11 +94,12 @@ export const ServicesSection = () => {
 									variants={itemAnimation}
 									whileHover={{ scale: 1.03 }}
 								>
-									<div className="flex h-20 w-20 items-center justify-center rounded-[30px] bg-primary">
-										{icon}
+									<div className="flex items-center gap-6">
+										<div className="flex h-20 w-20 items-center justify-center rounded-[30px] bg-primary">
+											{icon}
+										</div>
+										<h4 className="max-w-full flex-1 text-start text-xl font-bold">{title}</h4>
 									</div>
-
-									<h4 className="text-xl font-bold">{title}</h4>
 
 									<p className="text-custom-gray-500">{description}</p>
 								</motion.div>
