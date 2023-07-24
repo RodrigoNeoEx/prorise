@@ -8,7 +8,7 @@ export const Footer = () => {
 			<ContentContainer>
 				<div className="justify-around space-y-6 md:flex md:space-y-0">
 					<div className="space-y-4">
-						<p className="text-4xl">Prorise</p>
+						<p className="text-4xl font-bold">Prorise</p>
 						<p className="max-w-xs text-base leading-7 text-custom-gray-500">
 							A good design is not only aesthetically pleasing, but also functional. It should be
 							able to solve the problem
