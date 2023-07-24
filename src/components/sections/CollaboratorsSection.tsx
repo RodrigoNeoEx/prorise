@@ -41,9 +41,9 @@ export const CollaboratorsSection = () => {
 			<div className="relative mx-2 rounded-md bg-dark-900">
 				<Image src={imageSrc} alt={name} width={500} height={400} className="w-full object-cover" />
 
-				<div className="absolute bottom-1 left-2 z-10">
+				{/* <div className="absolute bottom-1 left-2 z-10">
 					<h4 className="text-xl font-semibold text-white">{name}</h4>
-				</div>
+				</div> */}
 			</div>
 		);
 	};
