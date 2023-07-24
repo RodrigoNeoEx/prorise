@@ -3,6 +3,8 @@ import EcoLayer from "@/public/eco-layer.svg";
 import TechLayer from "@/public/tech-layer.svg";
 import { motion, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
+import { Button } from "../ui/button";
+import { scrollToSection } from "@/helpers/scroll";
 
 export const SpaceSection = () => {
 	const [servicesContainerRef, animate] = useAnimate();
@@ -51,7 +53,7 @@ export const SpaceSection = () => {
 							A good design is not only aesthetically pleasing, but also functional. It should be
 							able to solve the problem{" "}
 						</p>
-						<button className="">Saiba mais</button>
+						<Button onClick={e => scrollToSection(e, "network")}>Saiba mais</Button>
 					</div>
 				</section>
 			</div>
