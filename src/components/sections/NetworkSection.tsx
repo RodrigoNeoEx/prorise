@@ -28,7 +28,7 @@ const formContactSchema = z.object({
 			"Apenas arquivos PDF são aceitos"
 		),
 
-	personType: z.enum(["pf", "pj"]),
+	personType: z.enum(["collaborators", "commercial"]),
 
 	attachment: z.string().optional(),
 });
@@ -45,7 +45,7 @@ export const NetworkSection = () => {
 	} = useForm<FormContact>({
 		resolver: zodResolver(formContactSchema),
 		defaultValues: {
-			personType: "pj",
+			personType: "commercial",
 		},
 	});
 
@@ -84,7 +84,7 @@ export const NetworkSection = () => {
 		setIsLoading(false);
 	}
 
-	const watchpersonType = watch("personType", "pj");
+	const watchpersonType = watch("personType", "commercial");
 
 	async function handleAttachment(file: File) {
 		const reader = new FileReader();
@@ -119,32 +119,33 @@ export const NetworkSection = () => {
 					<div className="order-1 mx-auto min-w-[300px] max-w-[600px]  space-y-6 lg:order-2 lg:h-[500px]">
 						<h3 className="text-3xl font-semibold sm:text-5xl">Entre em contato</h3>
 						<p className="text-base text-dark-400 sm:text-xl">
-							Compartilhe suas necessidades, ideias e desafios conosco através deste formulário de
-							contato.
+							{watchpersonType === "collaborators"
+								? "Cadastre seu currículo e venha fazer parte do nosso tive de devs."
+								: "Compartilhe suas necessidades, ideias e desafios conosco através deste formulário de contato."}
 						</p>
 
 						<form onSubmit={handleSubmit(handleSendEmail)} className="space-y-4">
-							<div className="flex gap-2">
+							<div className="flex gap-3">
 								<div className="flex items-center space-x-2">
 									<Label className="flex gap-2">
 										<input
 											type="radio"
-											value="pj"
+											value="commercial"
 											{...register("personType")}
 											className="h-4 w-4 border-dark-400 bg-transparent text-primary outline-none ring-0 focus:ring-black"
 										/>
-										Pessoa Jurídica
+										Comercial
 									</Label>
 								</div>
 								<div className="flex items-center space-x-2">
 									<Label className="flex gap-2">
 										<input
 											type="radio"
-											value="pf"
+											value="collaborators"
 											{...register("personType")}
 											className="h-4 w-4 border-dark-400 bg-transparent text-primary outline-none ring-0 focus:ring-black"
 										/>
-										Pessoa Física
+										Colaboradores
 									</Label>
 								</div>
 							</div>
@@ -167,7 +168,9 @@ export const NetworkSection = () => {
 
 							<Field error={errors.name}>
 								<Input
-									placeholder={watchpersonType === "pf" ? "Nome Completo*" : "Nome da Empresa*"}
+									placeholder={
+										watchpersonType === "collaborators" ? "Nome Completo*" : "Nome da Empresa*"
+									}
 									{...register("name")}
 								/>
 							</Field>
@@ -176,16 +179,14 @@ export const NetworkSection = () => {
 								<Textarea placeholder="Mensagem*" {...register("message")} />
 							</Field>
 
-							{watchpersonType === "pf" && (
-								<Field error={errors.file}>
-									<Input
-										placeholder="Anexar PDF"
-										type="file"
-										{...register("file")}
-										accept="application/pdf"
-									/>
-								</Field>
-							)}
+							<Field error={errors.file}>
+								<Input
+									placeholder="Anexar PDF"
+									type="file"
+									{...register("file")}
+									accept="application/pdf"
+								/>
+							</Field>
 
 							<div className="flex w-full justify-end">
 								<Button type="submit" variant="default" loading={isLoading} className="ml-auto">
