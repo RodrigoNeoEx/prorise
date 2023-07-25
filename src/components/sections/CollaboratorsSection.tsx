@@ -4,8 +4,17 @@ import Slider from "react-slick";
 import { ContentContainer } from "../ContentContainer";
 import { SectionHeader } from "../SectionHeader";
 
-import FundoHome from "@/assets/images/fundo-home.png";
 import MapImage from "@/assets/images/map.png";
+
+import CastImage from "@/assets/images/collaborators/cast.png";
+import AdviceImage from "@/assets/images/collaborators/advice.png";
+import EloImage from "@/assets/images/collaborators/elo.png";
+import IdeenImage from "@/assets/images/collaborators/ideen.png";
+import MaisVoceImage from "@/assets/images/collaborators/mais-voce.png";
+import MeProtegeImage from "@/assets/images/collaborators/me-protege.png";
+import MegaworkImage from "@/assets/images/collaborators/megawork.png";
+import PositivaImage from "@/assets/images/collaborators/positiva.png";
+import QualityWayImage from "@/assets/images/collaborators/quality-way.png";
 
 interface CollaboratorProps {
 	imageSrc: string | StaticImageData;
@@ -15,34 +24,54 @@ interface CollaboratorProps {
 export const CollaboratorsSection = () => {
 	const collaborators: CollaboratorProps[] = [
 		{
-			imageSrc: FundoHome,
-			name: "Colaborador 1",
+			imageSrc: CastImage,
+			name: "Cast Group",
 		},
 		{
-			imageSrc: FundoHome,
-			name: "Colaborador 2",
+			imageSrc: AdviceImage,
+			name: "Advise System",
 		},
 		{
-			imageSrc: FundoHome,
-			name: "Colaborador 3",
+			imageSrc: EloImage,
+			name: "Elo",
 		},
 		{
-			imageSrc: FundoHome,
-			name: "Colaborador 4",
+			imageSrc: IdeenImage,
+			name: "Ideen",
 		},
 		{
-			imageSrc: FundoHome,
-			name: "Colaborador 5",
+			imageSrc: MaisVoceImage,
+			name: "+ Você",
+		},
+		{
+			imageSrc: MeProtegeImage,
+			name: "Me Protege",
+		},
+		{
+			imageSrc: MegaworkImage,
+			name: "Megawork",
+		},
+		{
+			imageSrc: PositivaImage,
+			name: "Positiva",
+		},
+		{
+			imageSrc: QualityWayImage,
+			name: "Quality Way",
 		},
 	];
 
 	const Card = ({ imageSrc, name }: CollaboratorProps) => {
 		return (
-			<div className="relative mx-2 rounded-md bg-dark-900">
-				<Image src={imageSrc} alt={name} width={500} height={400} className="w-full object-cover" />
-
-				<div className="absolute bottom-1 left-2 z-10">
-					<h4 className="text-xl font-semibold text-white">{name}</h4>
+			<div className="mx-3 rounded-md">
+				<div className="bg-dark-900">
+					<Image
+						src={imageSrc}
+						alt={name}
+						width={500}
+						height={400}
+						className="aspect-video object-contain"
+					/>
 				</div>
 			</div>
 		);
@@ -56,7 +85,7 @@ export const CollaboratorsSection = () => {
 			<div className="w-full bg-dark-700 pb-[calc(5rem+185px)] pt-[5rem] md:pb-[calc(5rem+125px)] lg:pb-[calc(5rem+150px)]">
 				<ContentContainer>
 					<SectionHeader
-						title="Colaboradores de Destaque"
+						title="Clientes e parceiros"
 						description="A good design is not only aesthetically pleasing, but also functional. It should be able
 					to solve the problem."
 					/>
@@ -67,24 +96,30 @@ export const CollaboratorsSection = () => {
 							speed={2000}
 							autoplaySpeed={3000}
 							arrows={false}
-							slidesToShow={4}
+							slidesToShow={5}
 							responsive={[
 								{
-									breakpoint: 700,
+									breakpoint: 450,
 									settings: {
 										slidesToShow: 1,
 									},
 								},
 								{
-									breakpoint: 1150,
+									breakpoint: 750,
 									settings: {
 										slidesToShow: 2,
 									},
 								},
 								{
-									breakpoint: 1600,
+									breakpoint: 1150,
 									settings: {
 										slidesToShow: 3,
+									},
+								},
+								{
+									breakpoint: 1600,
+									settings: {
+										slidesToShow: 4,
 									},
 								},
 							]}

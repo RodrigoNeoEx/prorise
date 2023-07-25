@@ -5,7 +5,7 @@ export const HomeSection = () => {
 	return (
 		<section
 			id="home"
-			className="h-[calc(100vh-80px)] max-h-[calc(100vh-80px)] min-h-[400px] bg-fundo bg-cover"
+			className="h-[calc(100vh-80px)] max-h-[calc(100vh-80px)] min-h-[400px] bg-fundo bg-cover bg-center"
 		>
 			<ContentContainer>
 				<div className="flex h-[calc(100vh-80px)] flex-col justify-center space-y-4">

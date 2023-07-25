@@ -9,7 +9,7 @@ const formContactSchema = z.object({
 	message: z.string().min(10),
 	cel: z.string().min(8),
 	attachment: z.string().optional(),
-	personType: z.enum(["pf", "pj"]),
+	personType: z.enum(["collaborators", "commercial"]),
 });
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -39,7 +39,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	const mailOptions = {
 		from: user,
 		to: user,
-		subject: `Novo Contato ${personType === "pf" ? `de` : `da Empresa`} ${name} - ${email}`,
+		subject: `Novo Contato ${
+			personType === "collaborators" ? `de` : `da Empresa`
+		} ${name} - ${email}`,
 		html: templateMail({ name, message, email, cel, personType }),
 		...(attachment && {
 			attachments: [
