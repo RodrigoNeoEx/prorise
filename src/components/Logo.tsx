@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import ProriseLogo from "@/assets/images/logo-priorise.svg";
+import ProriseLogo from "@/assets/images/logo-prorise.svg";
 import { scrollToSection } from "@/helpers/scroll";
 
 export const Logo = () => {
