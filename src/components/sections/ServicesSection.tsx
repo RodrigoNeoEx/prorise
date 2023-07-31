@@ -90,18 +90,18 @@ export const ServicesSection = () => {
 							return (
 								<motion.div
 									key={title}
-									className="col flex flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 px-10 py-14"
+									className="col flex flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 p-8"
 									variants={itemAnimation}
 									whileHover={{ scale: 1.03 }}
 								>
-									<div className="flex items-center gap-6">
+									<div className="flex w-full items-center gap-6">
 										<div className="flex h-20 w-20 items-center justify-center rounded-[30px] bg-primary">
 											{icon}
 										</div>
 										<h4 className="max-w-full flex-1 text-start text-xl font-bold">{title}</h4>
 									</div>
 
-									<p className="text-custom-gray-500">{description}</p>
+									<p className="text-start text-custom-gray-500">{description}</p>
 								</motion.div>
 							);
 						})}
