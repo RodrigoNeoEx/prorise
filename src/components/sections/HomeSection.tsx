@@ -25,8 +25,8 @@ export const HomeSection = () => {
 						animate={{ opacity: 1 }}
 						transition={{ delay: 1, duration: 1 }}
 					>
-						A good design is not only aesthetically pleasing, but also functional. It should be able
-						to solve the problem
+						Um Novo Conceito que revolucionará sua jornada digital. Desperte a inovação e descubra
+						soluções criativas com nosso time apaixonado. Junte-se a nós hoje mesmo!
 					</motion.span>
 				</div>
 			</ContentContainer>

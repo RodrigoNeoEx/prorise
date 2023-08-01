@@ -89,7 +89,7 @@ export const ProjectsSection = () => {
 				<ContentContainer>
 					<SectionHeader
 						title="Nossos Projetos"
-						description="A good design is not only aesthetically pleasing, but also functional. It should be able to solve the problem."
+						description="Conheça alguns dos nossos cases de sucesso, onde a tecnologia inovadora impulsionou negócios e transformou ideias em realidade. Inspire-se conosco!"
 					/>
 
 					<div className="mb-10 mt-20 flex justify-center">
