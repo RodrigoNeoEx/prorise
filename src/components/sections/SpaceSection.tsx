@@ -50,8 +50,9 @@ export const SpaceSection = () => {
 							Oferecemos tudo o que você precisa
 						</h3>
 						<p className="text-base text-custom-gray-500 md:text-xl">
-							A good design is not only aesthetically pleasing, but also functional. It should be
-							able to solve the problem{" "}
+							Descubra as melhores tecnologias do mercado. Inovação, desempenho e confiabilidade
+							reunidos em uma única plataforma. Potencialize seu negócio com nosso ecossistema de
+							soluções de ponta. Experimente hoje!{" "}
 						</p>
 						<Button onClick={e => scrollToSection(e, "network")}>Saiba mais</Button>
 					</div>
