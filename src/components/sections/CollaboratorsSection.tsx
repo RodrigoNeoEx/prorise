@@ -86,7 +86,7 @@ export const CollaboratorsSection = () => {
 				<ContentContainer>
 					<SectionHeader
 						title="Clientes e Parceiros"
-						description="Alguns de nossos clientes e parceiros confiam em nossa tecnologia de ponta para alcançar o sucesso. Junte-se à nós nesta jornada!"
+						description="Alguns de nossos clientes e parceiros que confiam em nossa tecnologia de ponta para alcançar o sucesso. Junte-se à nós nesta jornada!"
 					/>
 					<div className="mt-10">
 						<Slider

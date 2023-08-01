@@ -12,8 +12,8 @@ export const Footer = () => {
 					<div className="space-y-4">
 						<p className="text-4xl font-bold uppercase">Prorise</p>
 						<p className="max-w-xs text-base leading-7 text-custom-gray-500">
-							A good design is not only aesthetically pleasing, but also functional. It should be
-							able to solve the problem
+							Um Novo Conceito que revolucionará sua jornada digital. Desperte a inovação e descubra
+							soluções criativas com nosso time apaixonado. Junte-se a nós hoje mesmo!
 						</p>
 					</div>
 
