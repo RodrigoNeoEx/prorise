@@ -1,6 +1,18 @@
+import { IconType } from "react-icons/lib";
 import { MdBuild, MdWork, MdAssuredWorkload, MdFactCheck } from "react-icons/md";
 
-export const menuItems = [
+type SubMenusProps = {
+	name: string;
+};
+
+type MenuItemsProps = {
+	name: string;
+	Icon: IconType;
+	sectionId: string;
+	subMenus?: SubMenusProps[];
+};
+
+export const menuItems: MenuItemsProps[] = [
 	{ name: "Serviços", Icon: MdBuild, sectionId: "services" },
 	{ name: "Colaboradores", Icon: MdWork, sectionId: "collaborators" },
 	{ name: "Tecnologias", Icon: MdAssuredWorkload, sectionId: "space" },
