@@ -83,11 +83,10 @@ export const CollaboratorsSection = () => {
 			<div className="w-full bg-dark-700 pb-[calc(5rem+185px)] pt-[5rem] md:pb-[calc(5rem+125px)] lg:pb-[calc(5rem+150px)]">
 				<ContentContainer>
 					<SectionHeader
-						title="Clientes e parceiros"
-						description="A good design is not only aesthetically pleasing, but also functional. It should be able
-					to solve the problem."
+						title="Clientes e Parceiros"
+						description="Alguns de nossos clientes e parceiros confiam em nossa tecnologia de ponta para alcançar o sucesso. Junte-se à nós nesta jornada!"
 					/>
-					<div className="mt-20">
+					<div className="mt-10">
 						<Slider
 							infinite
 							autoplay
@@ -139,9 +138,11 @@ export const CollaboratorsSection = () => {
 						<div className="absolute mt-20 flex h-[370px] w-[70vw] max-w-[290px] flex-wrap items-center justify-between gap-8 rounded-3xl bg-gradient-to-r from-[#1393BA] to-primary py-5 sm:max-w-[370px] md:h-[250px] md:max-w-[900px] md:flex-nowrap md:gap-0 lg:h-[300px]">
 							<div className="mx-3 flex flex-col items-start justify-center">
 								<p className="text-sm text-custom-gray-200 sm:text-base">
-									Conectando Talentos Brasil Afora
+									Conectando e Transformando o futuro através da tecnologia
 								</p>
-								<h4 className="text-2xl font-bold sm:text-4xl">Nossa Rede de Colaboradores</h4>
+								<h4 className="text-2xl font-bold sm:text-4xl">
+									A Tecnologia Globalizada em Suas Mãos!
+								</h4>
 							</div>
 
 							<Image

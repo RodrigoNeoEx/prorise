@@ -17,7 +17,7 @@ export const templateMail = ({
       <strong style="color: #08B3E6;">Dados do Remetente</strong>
     </p>
     <li>
-      <strong>${personType === "pf" ? "Nome" : "Nome da Empresa"}:</strong> ${name}
+      <strong>${personType === "collaborators" ? "Nome" : "Nome da Empresa"}:</strong> ${name}
     </li>
     <li>
       <strong>E-mail:</strong> ${email}
