@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-slide {
+    transform: scaleY(0.9);
+}
+.slick-active {
+    transform: scaleY(1.1);
+}

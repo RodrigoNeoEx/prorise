@@ -65,6 +65,24 @@ export const ProjectsSection = () => {
 		);
 	};
 
+	const settings = {
+		dots: true,
+		centerMode: true,
+		centerPadding: "80px",
+		infinite: true,
+		slidesToShow: 1,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		responsive: [
+			{
+				breakpoint: 480,
+				settings: {
+					centerPadding: "20px",
+				},
+			},
+		],
+	};
+
 	return (
 		<section id="projects" className="py-16">
 			<div className="bg-dark-700 py-12">
@@ -75,8 +93,8 @@ export const ProjectsSection = () => {
 					/>
 
 					<div className="mb-10 mt-20 flex justify-center">
-						<div className="w-[1000px] max-w-[90%]">
-							<Slider dots infinite slidesToShow={1} autoplay autoplaySpeed={5000}>
+						<div className="w-full max-w-[90%]">
+							<Slider {...settings}>
 								{projects.map(project => (
 									<Card key={project.title} {...project} />
 								))}
