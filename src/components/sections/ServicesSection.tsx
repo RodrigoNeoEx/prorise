@@ -81,7 +81,7 @@ export const ServicesSection = () => {
 				/>
 				<motion.div ref={servicesContainerRef}>
 					<motion.div
-						className="mt-10 grid w-fit gap-10 text-center md:grid-cols-2 md:gap-20 xl:grid-cols-3 xl:gap-10"
+						className="mt-10 flex w-fit flex-wrap justify-center gap-10 text-center md:gap-20 xl:gap-10"
 						variants={containerAnimation}
 						initial="hidden"
 						animate={controls}
@@ -90,7 +90,7 @@ export const ServicesSection = () => {
 							return (
 								<motion.div
 									key={title}
-									className="col flex flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 p-8"
+									className="col flex flex-1 flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 p-8 shadow-md shadow-white"
 									variants={itemAnimation}
 									whileHover={{ scale: 1.03 }}
 								>
