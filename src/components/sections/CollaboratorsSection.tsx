@@ -63,16 +63,14 @@ export const CollaboratorsSection = () => {
 
 	const Card = ({ imageSrc, name }: CollaboratorProps) => {
 		return (
-			<div className="mx-3 rounded-md">
-				<div className="bg-dark-900">
-					<Image
-						src={imageSrc}
-						alt={name}
-						width={500}
-						height={400}
-						className="aspect-video object-contain"
-					/>
-				</div>
+			<div className="mx-2 rounded-lg bg-dark-700 p-2">
+				<Image
+					src={imageSrc}
+					alt={name}
+					width={200}
+					height={120}
+					className="aspect-video object-contain"
+				/>
 			</div>
 		);
 	};
@@ -96,30 +94,30 @@ export const CollaboratorsSection = () => {
 							speed={2000}
 							autoplaySpeed={3000}
 							arrows={false}
-							slidesToShow={5}
+							slidesToShow={7}
 							responsive={[
 								{
 									breakpoint: 450,
-									settings: {
-										slidesToShow: 1,
-									},
-								},
-								{
-									breakpoint: 750,
 									settings: {
 										slidesToShow: 2,
 									},
 								},
 								{
+									breakpoint: 750,
+									settings: {
+										slidesToShow: 4,
+									},
+								},
+								{
 									breakpoint: 1150,
 									settings: {
-										slidesToShow: 3,
+										slidesToShow: 5,
 									},
 								},
 								{
 									breakpoint: 1600,
 									settings: {
-										slidesToShow: 4,
+										slidesToShow: 6,
 									},
 								},
 							]}
