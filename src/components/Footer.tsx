@@ -1,8 +1,8 @@
 import { ContentContainer } from "@/components/ContentContainer";
 import { menuItems } from "@/constants/menuItems";
 import { scrollToSection } from "@/helpers/scroll";
-import Link from "next/link";
-import { AiFillLinkedin } from "react-icons/ai";
+// import Link from "next/link";
+// import { AiFillLinkedin } from "react-icons/ai";
 
 export const Footer = () => {
 	return (
