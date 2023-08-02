@@ -8,7 +8,6 @@ import MapImage from "@/assets/images/map.png";
 
 import CastImage from "@/assets/images/collaborators/cast.png";
 import AdviceImage from "@/assets/images/collaborators/advice.png";
-import EloImage from "@/assets/images/collaborators/elo.png";
 import IdeenImage from "@/assets/images/collaborators/ideen.png";
 import MaisVoceImage from "@/assets/images/collaborators/mais-voce.png";
 import MeProtegeImage from "@/assets/images/collaborators/me-protege.png";
@@ -30,10 +29,6 @@ export const CollaboratorsSection = () => {
 		{
 			imageSrc: AdviceImage,
 			name: "Advise System",
-		},
-		{
-			imageSrc: EloImage,
-			name: "Elo",
 		},
 		{
 			imageSrc: IdeenImage,
