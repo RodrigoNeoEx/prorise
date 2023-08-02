@@ -16,6 +16,6 @@ export const menuItems: MenuItemsProps[] = [
 	{ name: "Serviços", Icon: MdBuild, sectionId: "services" },
 	{ name: "Parceiros", Icon: MdWork, sectionId: "collaborators" },
 	{ name: "Tecnologias", Icon: MdAssuredWorkload, sectionId: "space" },
-	{ name: "Projetos", Icon: MdFactCheck, sectionId: "projects" },
+	// { name: "Projetos", Icon: MdFactCheck, sectionId: "projects" },
 	{ name: "Contato", Icon: MdFactCheck, sectionId: "network" },
 ];
