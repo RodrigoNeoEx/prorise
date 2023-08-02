@@ -18,7 +18,7 @@ export const ProjectsSection = () => {
 			imageSrc: FundoHome,
 			title: "Projeto 1",
 			description:
-				"Nossa bodyshop de TI oferece talentos especializados para atender às suas necessidades de desenvolvimento, manutenção e suporte de software. Contamos com uma equipe qualificada para agregar valor e eficiência ao seu projeto.",
+				"Descubra a tranquilidade do Outsourcing de TI conosco. Nossa equipe cuida da gestão e manutenção dos sistemas, permitindo que você foque no crescimento dos negócios. Simplifique, otimize e alcance resultados excepcionais.",
 		},
 		{
 			imageSrc: FundoHome,

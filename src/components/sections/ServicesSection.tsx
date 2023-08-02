@@ -21,31 +21,31 @@ export const ServicesSection = () => {
 
 	const services = [
 		{
-			icon: <GrCode size={40} color="white" />,
+			icon: <GrCode size={24} color="white" />,
 			title: "Outsourcing",
 			description:
 				"Descubra a tranquilidade do Outsourcing de TI conosco. Nossa equipe de especialistas cuida da gestão e manutenção dos seus sistemas, permitindo que você foque no crescimento dos negócios. Simplifique, otimize e alcance resultados excepcionais.",
 		},
 		{
-			icon: <GrCode size={40} color="white" />,
+			icon: <GrCode size={24} color="white" />,
 			title: "Consultoria tech",
 			description:
 				"Como consultoria tech de TI oferecemos insights estratégicos e soluções personalizadas para impulsionar sua empresa rumo à excelência tecnológica. Aproveite nosso conhecimento especializado para alinhar a TI aos seus objetivos de negócios e alcançar resultados excepcionais.",
 		},
 		{
-			icon: <GrUserManager size={40} color="white" />,
+			icon: <GrUserManager size={24} color="white" />,
 			title: "Gestão e Administração",
 			description:
 				"Possuimos equipes especializadas em Gestão e Administração de TI para garantir operações eficientes e seguras. Deixe a infraestrutura tecnológica conosco e foque no sucesso dos seus negócios, com suporte confiável e soluções sob medida para suas necessidades.",
 		},
 		{
-			icon: <GrCode size={40} color="white" />,
+			icon: <GrCode size={24} color="white" />,
 			title: "Software house",
 			description:
 				"Somos uma Software House de TI dedicada a criar soluções inovadoras e personalizadas para o seu negócio. Com expertise em desenvolvimento de software, entregamos produtos de alta qualidade, impulsionando a eficiência e o crescimento da sua empresa.",
 		},
 		{
-			icon: <GrCode size={40} color="white" />,
+			icon: <GrCode size={24} color="white" />,
 			title: "Treinamentos",
 			description:
 				"Nossos treinamentos em tecnologia oferecem conhecimentos práticos e atualizados para capacitar sua equipe e alavancar sua performance no mundo digital. Desenvolva habilidades essenciais para enfrentar os desafios tecnológicos e impulsionar o sucesso do seu negócio.",
@@ -81,7 +81,7 @@ export const ServicesSection = () => {
 				/>
 				<motion.div ref={servicesContainerRef}>
 					<motion.div
-						className="mt-10 flex w-fit flex-wrap justify-center gap-10 text-center md:gap-20 xl:gap-10"
+						className="mt-10 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] justify-center gap-10 text-center"
 						variants={containerAnimation}
 						initial="hidden"
 						animate={controls}
@@ -90,18 +90,19 @@ export const ServicesSection = () => {
 							return (
 								<motion.div
 									key={title}
-									className="col flex flex-1 flex-col items-center gap-6 rounded-2xl border-2 border-dark-500 p-8 shadow-md shadow-white"
+									className="col flex flex-col items-center gap-4 rounded-2xl border-2 border-dark-500 p-8 shadow-md"
 									variants={itemAnimation}
 									whileHover={{ scale: 1.03 }}
 								>
-									<div className="flex w-full items-center gap-6">
-										<div className="flex h-20 w-20 items-center justify-center rounded-[30px] bg-primary">
-											{icon}
-										</div>
-										<h4 className="max-w-full flex-1 text-start text-xl font-bold">{title}</h4>
+									<div className="flex h-14 w-14 items-center justify-center rounded-[30px] bg-primary">
+										{icon}
 									</div>
 
-									<p className="text-start text-custom-gray-500">{description}</p>
+									<h4 className="mt-4 max-w-full text-center text-xl font-bold">{title}</h4>
+
+									<p className="text-center text-base leading-normal text-custom-gray-500">
+										{description}
+									</p>
 								</motion.div>
 							);
 						})}
