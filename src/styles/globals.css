@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.slick-slide {
-    transform: scaleY(0.9);
+.projects .slick-slide.slick-center  {
+  transform: scale(1);
+  opacity: 1;
 }
-.slick-active {
-    transform: scaleY(1.1);
+
+.projects .slick-slide {
+  transform: scaleY(0.7);
+  opacity: 0.6;
+}
+
+.projects .slick-dots li button:before {
+  color: #FFF;
 }

@@ -4,7 +4,7 @@ import { MdWhatsapp } from "react-icons/md";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export const WhatsappButton = () => {
-	const phoneNumber = 16992051424;
+	const phoneNumber = 16997418296;
 	const text = "Olá, gostaria de saber mais sobre a Prorise.";
 
 	return (

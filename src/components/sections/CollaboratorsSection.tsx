@@ -8,7 +8,6 @@ import MapImage from "@/assets/images/map.png";
 
 import CastImage from "@/assets/images/collaborators/cast.png";
 import AdviceImage from "@/assets/images/collaborators/advice.png";
-import EloImage from "@/assets/images/collaborators/elo.png";
 import IdeenImage from "@/assets/images/collaborators/ideen.png";
 import MaisVoceImage from "@/assets/images/collaborators/mais-voce.png";
 import MeProtegeImage from "@/assets/images/collaborators/me-protege.png";
@@ -30,10 +29,6 @@ export const CollaboratorsSection = () => {
 		{
 			imageSrc: AdviceImage,
 			name: "Advise System",
-		},
-		{
-			imageSrc: EloImage,
-			name: "Elo",
 		},
 		{
 			imageSrc: IdeenImage,
@@ -63,16 +58,14 @@ export const CollaboratorsSection = () => {
 
 	const Card = ({ imageSrc, name }: CollaboratorProps) => {
 		return (
-			<div className="mx-3 rounded-md">
-				<div className="bg-dark-900">
-					<Image
-						src={imageSrc}
-						alt={name}
-						width={500}
-						height={400}
-						className="aspect-video object-contain"
-					/>
-				</div>
+			<div className="mx-2 rounded-lg bg-dark-700 p-2">
+				<Image
+					src={imageSrc}
+					alt={name}
+					width={200}
+					height={120}
+					className="aspect-video object-contain"
+				/>
 			</div>
 		);
 	};
@@ -86,7 +79,7 @@ export const CollaboratorsSection = () => {
 				<ContentContainer>
 					<SectionHeader
 						title="Clientes e Parceiros"
-						description="Alguns de nossos clientes e parceiros confiam em nossa tecnologia de ponta para alcançar o sucesso. Junte-se à nós nesta jornada!"
+						description="Alguns de nossos clientes e parceiros que confiam em nossa tecnologia de ponta para alcançar o sucesso. Junte-se à nós nesta jornada!"
 					/>
 					<div className="mt-10">
 						<Slider
@@ -95,30 +88,30 @@ export const CollaboratorsSection = () => {
 							speed={2000}
 							autoplaySpeed={3000}
 							arrows={false}
-							slidesToShow={5}
+							slidesToShow={7}
 							responsive={[
 								{
 									breakpoint: 450,
-									settings: {
-										slidesToShow: 1,
-									},
-								},
-								{
-									breakpoint: 750,
 									settings: {
 										slidesToShow: 2,
 									},
 								},
 								{
+									breakpoint: 750,
+									settings: {
+										slidesToShow: 4,
+									},
+								},
+								{
 									breakpoint: 1150,
 									settings: {
-										slidesToShow: 3,
+										slidesToShow: 5,
 									},
 								},
 								{
 									breakpoint: 1600,
 									settings: {
-										slidesToShow: 4,
+										slidesToShow: 6,
 									},
 								},
 							]}
