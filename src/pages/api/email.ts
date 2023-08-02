@@ -57,8 +57,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	transporter.sendMail(mailOptions, error => {
 		if (error) {
 			res.status(500).json({ error: "Erro ao enviar e-mail." });
-		} else {
-			res.status(200).json({ message: "E-mail enviado com sucesso." });
 		}
 	});
+
+	transporter.close();
+
+	return res.status(200).json({ message: "E-mail enviado com sucesso." });
 }
