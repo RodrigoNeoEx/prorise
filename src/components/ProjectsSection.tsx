@@ -48,13 +48,13 @@ export const ProjectsSection = () => {
 
 	const Card = ({ imageSrc, title, description }: ProjectProps) => {
 		return (
-			<div className="flex flex-col bg-dark-800 md:flex-row">
+			<div className="mx-4 flex flex-col border border-neutral-700 bg-dark-800 lg:flex-row">
 				<Image
 					src={imageSrc}
 					alt={title}
 					width={500}
 					height={500}
-					className="h-[400px] w-full object-cover md:w-[300px] lg:w-[400px]"
+					className="h-[400px] w-full rounded-lg object-cover lg:w-1/2 xl:w-[400px]"
 				/>
 
 				<div className="m-10 space-y-7">
@@ -68,16 +68,22 @@ export const ProjectsSection = () => {
 	const settings = {
 		dots: true,
 		centerMode: true,
-		centerPadding: "80px",
+		centerPadding: "10%",
 		infinite: true,
 		slidesToShow: 1,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 5000,
 		responsive: [
 			{
-				breakpoint: 480,
+				breakpoint: 800,
 				settings: {
-					centerPadding: "20px",
+					centerPadding: "0",
+				},
+			},
+			{
+				breakpoint: 1200,
+				settings: {
+					centerPadding: "15%",
 				},
 			},
 		],
@@ -94,7 +100,7 @@ export const ProjectsSection = () => {
 
 					<div className="mb-10 mt-20 flex justify-center">
 						<div className="w-full max-w-[90%]">
-							<Slider {...settings}>
+							<Slider {...settings} className="projects">
 								{projects.map(project => (
 									<Card key={project.title} {...project} />
 								))}

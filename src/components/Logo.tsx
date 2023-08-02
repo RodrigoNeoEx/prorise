@@ -11,6 +11,7 @@ export const Logo = () => {
 				alt="Prorise logo"
 				width={125}
 				height={40}
+				priority
 				onClick={e => scrollToSection(e, "home")}
 				className="cursor-pointer"
 			/>
