@@ -1,6 +1,6 @@
 var http = require("http");
-const express = require("express");
+import express from "express";
 const app = express();
 
-const port = porta_da_aplicação;
+const port = "nodejsng10f06.kinghost.net";
 app.listen(port);
