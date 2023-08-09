@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import { MdMenuBook, MdOutlineFactory } from "react-icons/md";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { FaPeopleArrows } from "react-icons/fa";
+import { TbSettingsAutomation } from "react-icons/tb";
 
 export const ServicesSection = () => {
 	const servicesContainerRef = useRef(null);
@@ -27,31 +28,37 @@ export const ServicesSection = () => {
 			icon: <FaPeopleArrows size={40} color="black" />,
 			title: "Outsourcing",
 			description:
-				"Descubra a tranquilidade do Outsourcing de TI conosco. Nossa equipe de especialistas cuida da gestão e manutenção dos seus sistemas, permitindo que você foque no crescimento dos negócios. Simplifique, otimize e alcance resultados excepcionais.",
+				"Experimente a tranquilidade do Outsourcing de TI conosco. Especialistas cuidam da gestão dos sistemas, para você focar no crescimento. Simplifique, otimize e alcance resultados excepcionais.",
 		},
 		{
 			icon: <BsGraphUpArrow size={40} color="black" />,
-			title: "Consultoria tech",
+			title: "Consultoria Tech",
 			description:
-				"Como consultoria tech de TI oferecemos insights estratégicos e soluções personalizadas para impulsionar sua empresa rumo à excelência tecnológica. Aproveite nosso conhecimento especializado para alinhar a TI aos seus objetivos de negócios e alcançar resultados excepcionais.",
+				"Oferecemos insights e soluções personalizadas para impulsionar sua empresa rumo à excelência tecnológica. Aproveite nosso conhecimento para alinhar a TI aos seus objetivos e alcançar resultados excepcionais.",
 		},
 		{
 			icon: <GrUserManager size={40} color="black" />,
 			title: "Gestão e Administração",
 			description:
-				"Possuimos equipes especializadas em Gestão e Administração de TI para garantir operações eficientes e seguras. Deixe a infraestrutura tecnológica conosco e foque no sucesso dos seus negócios, com suporte confiável e soluções sob medida para suas necessidades.",
+				"Nossas equipes especializadas em Gestão de TI asseguram operações eficientes e seguras. Deixe a infraestrutura conosco, focando no sucesso dos negócios com suporte confiável e soluções sob medida.",
 		},
 		{
 			icon: <MdOutlineFactory size={40} color="black" />,
-			title: "Software house",
+			title: "Software House",
 			description:
-				"Somos uma Software House de TI dedicada a criar soluções inovadoras e personalizadas para o seu negócio. Com expertise em desenvolvimento de software, entregamos produtos de alta qualidade, impulsionando a eficiência e o crescimento da sua empresa.",
+				"Criamos soluções inovadoras para seu negócio. Com expertise em desenvolvimento, entregamos produtos de qualidade, impulsionando eficiência e crescimento empresarial.",
 		},
 		{
 			icon: <MdMenuBook size={40} color="black" />,
 			title: "Treinamentos",
 			description:
-				"Nossos treinamentos em tecnologia oferecem conhecimentos práticos e atualizados para capacitar sua equipe e alavancar sua performance no mundo digital. Desenvolva habilidades essenciais para enfrentar os desafios tecnológicos e impulsionar o sucesso do seu negócio.",
+				"Oferecemos conhecimentos práticos para capacitar sua equipe no mundo digital. Desenvolva habilidades essenciais para impulsionar o sucesso do seu negócio diante dos desafios tecnológicos",
+		},
+		{
+			icon: <TbSettingsAutomation size={40} color="black" />,
+			title: "RPA e BOT's",
+			description:
+				"Simplifique tarefas, aumente a eficiência e reduza erros. Transforme seu fluxo de trabalho com automação inteligente, impulsionando produtividade e inovação.",
 		},
 	];
 
