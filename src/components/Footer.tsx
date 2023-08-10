@@ -1,8 +1,8 @@
 import { ContentContainer } from "@/components/ContentContainer";
 import { menuItems } from "@/constants/menuItems";
 import { scrollToSection } from "@/helpers/scroll";
-// import Link from "next/link";
-// import { AiFillLinkedin } from "react-icons/ai";
+import Link from "next/link";
+import { AiFillLinkedin } from "react-icons/ai";
 
 export const Footer = () => {
 	return (
@@ -21,7 +21,7 @@ export const Footer = () => {
 					<div>
 						<p className="mb-4 text-xl">Seções</p>
 
-						<div className="grid grid-cols-2 gap-x-4 gap-y-8 text-sm text-custom-gray-500 md:grid-cols-3">
+						<div className="grid max-w-xs gap-x-4 gap-y-8 text-sm text-custom-gray-500">
 							<div className="flex flex-col space-y-3">
 								{menuItems.map(({ name, sectionId }) => (
 									<a
@@ -36,15 +36,15 @@ export const Footer = () => {
 						</div>
 					</div>
 
-					{/* <div>
+					<div>
 						<p className="mb-4 text-xl">Redes</p>
 
 						<div className="flex items-end">
-							<Link href="https://linkedin.com" target="_blank">
+							<Link href="https://www.linkedin.com/company/prorise-it" target="_blank">
 								<AiFillLinkedin size={30} title="Linkedin" />
 							</Link>
 						</div>
-					</div> */}
+					</div>
 				</div>
 			</ContentContainer>
 		</footer>
